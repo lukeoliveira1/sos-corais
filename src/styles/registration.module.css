@@ -1,23 +1,12 @@
 .center {
   display: flex;
   flex-direction: column;
-  margin: 20px 40px 0 0;
-  border-radius: 20px;
-  border-style: solid;
-  border: 2px solid #A9B2BB;
   padding: 40px;
 }
 
 .center h1 {
   margin-top: -10px;
   font-size: 50px;
-}
-
-.center p {
-  font-size: 20px;
-  margin-bottom: -10px;
-  text-align: justify;
-  text-indent: 2em;
 }
 
 .aside {
@@ -38,6 +27,29 @@
   margin-bottom: 20px;
 }
 
-.divBack footer {
-  width: 100%;
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
+.sendFile {
+  margin-top: 25px;
+}
+
+.formLeft {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  width: 36.4%;
+}
+
+.formRight {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.formButton {
+  display: flex;
+  justify-content: flex-end;
 }

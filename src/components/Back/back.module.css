@@ -1,0 +1,36 @@
+.divBack {
+  margin: -8px;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: #E5E8EA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;  
+}
+
+.sectionHeader  {
+  display: flex;
+  box-sizing: border-box;
+  background: #A9B2BB;
+  padding: 25px;
+  margin: -8px;
+}
+
+.sectionFooter {
+  display: flex;
+  box-sizing: border-box;
+  background: #A9B2BB;
+  padding: 25px;
+  margin: -8px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+}

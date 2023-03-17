@@ -1,0 +1,35 @@
+.lineFooter {
+  background: #A9B2BB;
+  padding: 1px;
+  width: 80%;
+  margin-top: 55px;
+}
+
+.divFooter {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.footerGithub {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footerGithub a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.footerGithub p {
+  margin-right: 2px;
+}
