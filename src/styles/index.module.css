@@ -1,0 +1,145 @@
+.divBack {
+  margin: -8px;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: #E5E8EA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;  
+}
+
+.sectionHeader  {
+  display: flex;
+  box-sizing: border-box;
+  background: #A9B2BB;
+  padding: 25px;
+  margin: -8px;
+}
+
+.sectionFooter {
+  display: flex;
+  box-sizing: border-box;
+  background: #A9B2BB;
+  padding: 25px;
+  margin: -8px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.header p {
+  color: #000000; /* exemplo de cor */
+  text-decoration: none; /* exemplo de remoção de sublinhado */
+  /* adicione outros estilos aqui */
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000000;
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.lineHeader1 {
+  background: #A9B2BB;
+  padding: 1px;
+  width: 80%;
+  margin-top: 15px;
+}
+
+.lineHeader2 {
+  background: #A9B2BB;
+  padding: 1px;
+  width: 80%;
+  margin-top: 55px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  margin-right: 60px;
+}
+
+.center h1 {
+  font-size: 50px;
+}
+
+.center p {
+  font-size: 20px;
+  margin-bottom: -10px;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.aside a {
+  text-decoration: none;
+  color: #000000;
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.aside p {
+  margin-top: 30px;
+}
+
+.aside a {
+  margin-bottom: 30px;
+}
+
+.divBack footer {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.footerGithub {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footerGithub a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.footerGithub p {
+  margin-right: 2px;
+}
