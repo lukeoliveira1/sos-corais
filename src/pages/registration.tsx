@@ -16,6 +16,7 @@ export default function Registration() {
   return(
     <>
      <Back>
+      
       <div className={styles.center}>
         
         <h1>Inscrição</h1>
@@ -85,9 +86,9 @@ export default function Registration() {
       
       <div className={styles.aside}>
       
-        <Image src={imageRegistration1} alt="Coral branco com fundo de praia" className={styles.img1} height={170} width={175}/>
+        <Image src={imageRegistration1} alt="Coral branco com fundo de praia" className={styles.img1} height={170} width={350}/>
         
-        <Image src={imageRegistration2} alt="corais brancos no fundo do mar" height={170} width={175}/>
+        <Image src={imageRegistration2} alt="corais brancos no fundo do mar" height={170} width={350}/>
         
       </div>
      </Back>

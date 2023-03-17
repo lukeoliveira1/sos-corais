@@ -1,7 +1,9 @@
 .center {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 40px;
+  width: 60%;
 }
 
 .center h1 {
@@ -15,6 +17,7 @@
   margin-left: 40px;
   text-align: justify;
   font-size: 16px;
+  width: 40%;
 }
 
 .aside img {
@@ -34,13 +37,13 @@
 
 .sendFile {
   margin-top: 25px;
+  width: 200px;
 }
 
 .formLeft {
   display: flex;
   flex-direction: column;
   margin-right: 30px;
-  width: 36.4%;
 }
 
 .formRight {
