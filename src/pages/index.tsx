@@ -8,8 +8,6 @@ import imageMain from 'public/img/image-main-1.png'
 
 import imageAside from 'public/img/image-main-2.png'
 
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
 import { Back } from '@/components/Back'
 
 export default function Home() {

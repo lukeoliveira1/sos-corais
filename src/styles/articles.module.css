@@ -1,0 +1,36 @@
+.title {
+  font-size: 32px;
+  margin-top: 60px;
+  margin-bottom: -30px;
+}
+
+.lineArticleH1 {
+  background: #A9B2BB;
+  padding: 1px;
+  width: 100%;
+  margin-top: 55px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  width: 80%;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  width: 25%;
+}
+
+.aside p{
+  text-align: justify;
+  font-size: 16px;
+}
+
+.aside img {
+  margin-top: 20px;
+}
+
