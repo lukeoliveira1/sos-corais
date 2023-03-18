@@ -9,9 +9,42 @@ import imageRegistration2 from 'public/img/image-registration-2.png'
 import { Back } from '@/components/Back';
 import { InputText } from '@/components/InputText';
 import { Button } from '@/components/Button';
+import { FormEvent, useState } from 'react';
 
 
 export default function Registration() {
+
+  const [nameStudentOne, setNameStudentOne] = useState<string>('');
+  const [nameStudentTwo, setNameStudentTwo] = useState<string>('');
+  const [nameAdvisorOne, setNameAdvisorOne] = useState<string>('');
+  const [nameAdvisorTwo, setNameAdvisorTwo] = useState<string>('');
+  const [nameSchool, setNameSchool] = useState<string>('');
+  const [nameArticle, setNameArticle] = useState<string>('');
+  const [article, setArticle] = useState<File | null>(null);
+  
+  function handleSubmitForm(event : FormEvent) {
+    event.preventDefault()
+
+    const formData = {
+      nameStudentOne,
+      nameStudentTwo,
+      nameAdvisorOne,
+      nameAdvisorTwo,
+      nameSchool,
+      nameArticle,
+      article
+    }
+   
+    console.log(formData)
+
+    setNameStudentOne('')
+    setNameStudentTwo('')
+    setNameAdvisorOne('')
+    setNameAdvisorTwo('')
+    setNameSchool('')
+    setNameArticle('')
+    setArticle(null)
+  }
 
   return(
     <>
@@ -21,57 +54,74 @@ export default function Registration() {
         
         <h1>Inscrição</h1>
         
-        <form action="" className={styles.form}>
+        <form onSubmit={handleSubmitForm} className={styles.form}>
 
           <div className={styles.formLeft}>
 
             <InputText 
+              type="text"
               label='Nome Estudante 1:'
               name='nameStudentFirst'
               isRequired={true}
-              value=''
+              value={nameStudentOne}
+              onChange={(event) => setNameStudentOne(event.target.value)} 
               />
             
             <InputText 
+              type="text"
               label='Nome Estudante 2:'
               name='nameStudentSeconde'
               isRequired={false}
-              value=''
+              value={nameStudentTwo}
+              onChange={(event) => setNameStudentTwo(event.target.value)} 
             />
 
             <InputText 
+              type="text"
               label='Nome do artigo:'
               name='articleName'
               isRequired={true}
-              value=''
+              value={nameArticle}
+              onChange={(event) => setNameArticle(event.target.value)} 
               />
-            
-            <label htmlFor=""></label>
-            <input type='file' name='article' className={styles.sendFile}/>
+                      
+             <input
+               type="file"
+               name="article"
+               id="article"
+               onChange={(event)=> setArticle(event.target.files && event.target.files[0])}
+               className={styles.sendFile}
+             />
             
           </div>
 
           <div className={styles.formRight}>
 
             <InputText 
+              type="text"
               label='Escola:'
               name='schoolName'
               isRequired={true}
-              value=''
+              value={nameSchool}
+              onChange={(event) => setNameSchool(event.target.value)} 
               />
             
             <InputText 
+              type="text"
               label='Orientador 1:'
               name='advisorOne'
               isRequired={true}
-              value=''
+              value={nameAdvisorOne}
+              onChange={(event) => setNameAdvisorOne(event.target.value)} 
             />
 
             <InputText 
+              type="text"
               label='Orientador 2:'
               name='advisorTwo'
               isRequired={false}
-              value=''
+              value={nameAdvisorTwo}
+              onChange={(event) => setNameAdvisorTwo(event.target.value)} 
               />
 
             <div className={styles.formButton}>

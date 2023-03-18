@@ -5,10 +5,33 @@ import styles from '../styles/articles.module.css'
 import imageArticle from 'public/img/image-articles.png'
 
 import { Back } from '@/components/Back'
-import { CardArticle } from '@/components/CardArticle'
-import { Pagination } from '@/components/Pagination'
+import { InputText } from '@/components/InputText'
+import { Button } from '@/components/Button'
+import { FormEvent, useState } from 'react'
+import { useRouter } from 'next/router'
 
-export default function Articles() {
+export default function ArticlesWithoutLogin() {
+
+  const router = useRouter()
+
+  const [user, setUser] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+
+  function handleLogin(event : FormEvent) {
+    event.preventDefault()
+
+    console.log(user, password)
+    
+    if(user === 'admin' && password === '1234') {
+      router.push('./articles-login')
+    } else {
+      alert('You are not administrator!')
+    }
+
+    setUser('')
+    setPassword('')
+  }
+
   return(
     <>
        <Back>        
@@ -19,25 +42,34 @@ export default function Articles() {
           
           <section className={styles.lineArticleH1}></section>
 
-          <CardArticle
-            nameArticle='Ecologia de corais: a relação entre a diversidade e a resiliência de recifes de coral' 
-            nameStudentOne='John Park' 
-            nameAdvisorOne='Chris Broksle' 
-          />
-          <CardArticle
-            nameArticle='Fenótipo de coral: investigando as adaptações moleculares a mudanças ambientais' 
-            nameStudentOne='John Park' 
-            nameStudentTwo='Matthew Spot' 
-            nameAdvisorOne='Chris Broksle' 
-            nameAdvisorTwo='Andrew Michael' 
-          />
-          <CardArticle
-            nameArticle='Genômica de coral: a busca por genes de resistência em corais ameaçados' 
-            nameStudentOne='John Park' 
-            nameAdvisorOne='Chris Broksle' 
-          />
-          
-          <Pagination />
+          <div className={styles.divLogin}>
+            <form onSubmit={handleLogin}>
+              
+            <InputText 
+              type='text'
+              label='Usuário:'
+              name='user'
+              isRequired={true}
+              value={user}
+              onChange={(event) => setUser(event.target.value)} 
+              />
+
+            <InputText 
+              type='password'
+              label='Senha:'
+              name='password'
+              isRequired={false}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)} 
+              />
+
+            <div className={styles.formButton}>
+              <Button />
+            </div>
+
+            </form>
+          </div>
+
         </div>
         
         <div className={styles.aside}>
@@ -47,7 +79,7 @@ export default function Articles() {
           </p>
     
           
-          <Image src={imageArticle} alt="corais e peixes no fundo do mar" height={250} width={250}/>
+          <Image src={imageArticle} alt="corais e peixes no fundo do mar" height={250} width={350}/>
           
         </div>
               

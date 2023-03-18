@@ -1,5 +1,6 @@
 .title {
   font-size: 32px;
+  margin-top: 60px;
   margin-bottom: -30px;
 }
 
@@ -12,19 +13,9 @@
 
 .center {
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
   margin-right: 40px;
-  margin-top: 40px;
   width: 65%;
-}
-
-.divLogin {
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
-  padding: 182px 16px 182px 16px;
-  box-shadow: 8px 8px 16px 16px rgba(0, 0, 0, 0.08);
 }
 
 .aside {
@@ -43,7 +34,3 @@
   margin-top: 20px;
 }
 
-.formButton {
-  display: flex;
-  justify-content: center;
-}
