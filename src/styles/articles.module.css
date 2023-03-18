@@ -41,6 +41,8 @@
 
 .aside img {
   margin-top: 20px;
+  box-shadow: 8px 8px 16px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
 }
 
 .formButton {

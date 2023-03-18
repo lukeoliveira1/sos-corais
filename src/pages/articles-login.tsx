@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import styles from '../styles/articles-login.module.css'
 
-import imageArticle from 'public/img/image-articles.png'
+import imageArticle from 'public/img/image-articles.jpg'
 
 import { Back } from '@/components/Back'
 import { CardArticle } from '@/components/CardArticle'

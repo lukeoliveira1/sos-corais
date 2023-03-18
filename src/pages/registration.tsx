@@ -2,9 +2,7 @@ import Image from 'next/image'
 
 import styles from '../styles/registration.module.css'
 
-import imageRegistration1 from 'public/img/image-registration-1.png'
-import imageRegistration2 from 'public/img/image-registration-2.png'
-
+import imageRegistration from 'public/img/image-registration-1.jpg'
 
 import { Back } from '@/components/Back';
 import { InputText } from '@/components/InputText';
@@ -135,10 +133,8 @@ export default function Registration() {
       </div>
       
       <div className={styles.aside}>
-      
-        <Image src={imageRegistration1} alt="Coral branco com fundo de praia" className={styles.img1} height={170} width={350}/>
         
-        <Image src={imageRegistration2} alt="corais brancos no fundo do mar" height={170} width={350}/>
+        <Image src={imageRegistration} alt="corais brancos no fundo do mar" height={350} width={350}/>
         
       </div>
      </Back>

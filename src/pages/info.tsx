@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import styles from '../styles/info.module.css'
 
-import imageAside1 from 'public/img/image-readmore-1.png'
+import imageAside1 from 'public/img/image-readmore-1.jpg'
 import imageAside2 from 'public/img/image-readmore-2.png'
 
 import { Back } from '@/components/Back'

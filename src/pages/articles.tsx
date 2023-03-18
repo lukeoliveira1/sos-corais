@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import styles from '../styles/articles.module.css'
 
-import imageArticle from 'public/img/image-articles.png'
+import imageArticle from 'public/img/image-articles.jpg'
 
 import { Back } from '@/components/Back'
 import { InputText } from '@/components/InputText'

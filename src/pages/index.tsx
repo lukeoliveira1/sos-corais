@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import styles from '../styles/index.module.css'
 
-import imageMain from 'public/img/image-main-1.png'
+import imageMain from 'public/img/image-main-1.jpg'
 
 import imageAside from 'public/img/image-main-2.png'
 
@@ -21,7 +21,7 @@ export default function Home() {
         
         <h1>Estratégias para <br/> restaurar os recifes</h1>
         
-        <Image src={imageMain} alt="corais e peixes no fundo do mar" height={350} width={650}/>
+        <Image src={imageMain} alt="corais e peixes no fundo do mar" height={350} width={600} />
         
       </div>
       
@@ -35,7 +35,7 @@ export default function Home() {
           <b> Ler Mais </b> 
         </Link>
         
-        <Image src={imageAside} alt="corais e peixes no fundo do mar" height={325} width={250}/>
+        <Image src={imageAside} alt="corais e peixes no fundo do mar"/>
         
       </div>
     

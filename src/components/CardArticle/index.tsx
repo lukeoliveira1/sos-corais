@@ -15,16 +15,16 @@ export function CardArticle({ nameArticle, nameStudentOne, nameStudentTwo, nameA
 
       <h2>{nameArticle}</h2>
 
-      <p>{nameStudentOne}</p>
+      <p>Aluno(a): {nameStudentOne}</p>
 
       {nameStudentTwo && 
-        <p>{nameStudentTwo}</p>
+        <p>Aluno(a): {nameStudentTwo}</p>
       }
 
-      <p>{nameAdvisorOne}</p>
+      <p>Orientador(a): {nameAdvisorOne}</p>
 
       {nameAdvisorTwo &&
-        <p>{nameAdvisorTwo}</p>
+        <p>Orientador(a): {nameAdvisorTwo}</p>
       }
     
     </div>
