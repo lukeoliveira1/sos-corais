@@ -21,7 +21,7 @@ export default function Home() {
         
         <h1>Estratégias para <br/> restaurar os recifes</h1>
         
-        <Image src={imageMain} alt="corais e peixes no fundo do mar" height={350} width={600} />
+        <Image src={imageMain} alt="corais e peixes no fundo do mar" />
         
       </div>
       

@@ -15,11 +15,11 @@ export function Footer() {
             
             <div className={styles.footer}>
               
-              <Image src={logo} alt="logo do sos corais" height={40} width={100}/>
+              <Image src={logo} alt="logo do sos corais" className={styles.logoSos}/>
               
               <div className={styles.footerGithub}>
                 <a href="https://github.com/lukeoliveira1">@lukeoliveira1</a>
-                <Image src={logoGithub} alt="logo do github" height={32} width={32}/>
+                <Image src={logoGithub} alt="logo do github" className={styles.logoGithub}/>
               </div>
             
             </div>

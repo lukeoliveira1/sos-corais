@@ -2,7 +2,7 @@
   background: #A9B2BB;
   padding: 1px;
   width: 80%;
-  margin-top: 55px;
+  margin-top: 2.5%;
 }
 
 .divFooter {
@@ -15,8 +15,8 @@
   align-items: center;
   width: 100%;
   justify-content: space-around;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 2%;
+  margin-bottom: 3%;
 }
 
 .footerGithub {
@@ -28,8 +28,27 @@
 .footerGithub a {
   text-decoration: none;
   color: #000000;
+  font-size: 1rem;
 }
 
-.footerGithub p {
-  margin-right: 2px;
+@media (max-width: 1200px) {
+  .logoSos {
+      width: 20%;
+      height: 10%;
+    }
+
+  .logoGithub {
+    width: 25%;
+    height: 15%;
+  }
+
+  .footerGithub a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 475px) {
+  .footerGithub a {
+    font-size: 0.6rem;
+  }
 }

@@ -11,7 +11,7 @@ export function Header() {
     <>
       <header className={styles.header}>
           
-          <Image src={logo} alt="logo do sos corais"/>
+          <Image src={logo} alt="logo do sos corais" className={styles.logoSos}/>
           
           <div className={styles.menu}>
             

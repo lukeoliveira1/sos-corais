@@ -1,42 +1,72 @@
 .center {
   display: flex;
   flex-direction: column;
-  margin-right: 60px;
+  margin: 2% 10% 0 0;
 }
 
 .center h1 {
-  font-size: 50px;
+  font-size: 3rem;
 }
 
 .center p {
-  font-size: 20px;
-  margin-bottom: -10px;
+  font-size: 1rem;
 }
 
 .center img {
   box-shadow: 8px 8px 16px 16px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  width: 100%;
+  height: 50%;
 }
 
 .aside {
   display: flex;
   flex-direction: column;
-  margin-left: 90px;
   text-align: justify;
-  font-size: 16px;
+  font-size: 1rem;
+}
+
+.aside img {
+  width: 100%;
+  height: 80%;
 }
 
 .aside a {
   text-decoration: none;
   color: #000000;
-  margin-right: 20px;
-  font-size: 16px;
-}
-
-.aside p {
-  margin-top: 30px;
+  margin-right: 2%;
+  font-size: 1rem;
 }
 
 .aside a {
   margin-bottom: 30px;
+}
+
+@media (max-width: 1200px)  {
+  .center {
+    margin-right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .center h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .center p {
+    font-size: 0.8rem;
+    margin-bottom: -10px;
+  }
+
+  .aside {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aside img {
+    width: 80%;
+    height: 0%;
+  }
 }
