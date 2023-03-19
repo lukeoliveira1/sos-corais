@@ -20,8 +20,6 @@
   margin-top: 15px;
 }
 
-
-
 .menu {
   display: flex;
   flex-direction: row;
@@ -33,4 +31,32 @@
   color: #000000;
   margin-right: 20px;
   font-size: 16px;
+}
+
+
+@media only screen and (min-width: 425px) {
+  .menu a {
+    display: flex;
+    font-size: 16px;
+    margin-right: 15px;
+  }
+
+  .header img {
+    width: 120px;
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .menu a {
+    display: flex;
+    font-size: 10px;
+    margin-right: 10px;
+  }
+
+  .header img {
+    width: 75px;
+    height: 30px;
+  }
+ 
 }

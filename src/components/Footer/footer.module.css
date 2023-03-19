@@ -33,3 +33,33 @@
 .footerGithub p {
   margin-right: 2px;
 }
+
+@media only screen and (min-width: 425px) {
+  .logoSoscorais {
+    width: 120px;
+    height: 50px;
+  }
+  .logoGithub {
+    width: 28px;
+    height: 28px;
+  }
+  .footerGithub a {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .logoSoscorais {
+    width: 75px;
+    height: 30px;
+  }
+
+  .logoGithub {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer {
+    font-size: 10px;
+  }
+}

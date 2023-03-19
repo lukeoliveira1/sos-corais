@@ -32,5 +32,28 @@
   align-items: center;
   justify-content: center;
   width: 80%;
-  height: 100%;
+  height: 100vh;
+}
+
+@media only screen and (min-width: 787px) {
+  .divBack {
+    align-items: center;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 786px) {
+  .divBack {
+    align-items: center;
+  }
+
+  .main {
+    width: 100%;
+    font-size: 10px;  
+    flex-direction: column;
+  }
 }
