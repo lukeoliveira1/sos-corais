@@ -28,9 +28,9 @@ export default function Home() {
 
       <div className={styles.aside}>
       
-        <Image src={imageAside1} alt="corais e peixes no fundo do mar" className={styles.img1} height={330} width={250}/>
+        <Image src={imageAside1} alt="corais e peixes no fundo do mar" className={styles.img1} />
         
-        <Image src={imageAside2} alt="corais e peixes no fundo do mar" height={330} width={250}/>
+        <Image src={imageAside2} alt="corais e peixes no fundo do mar" className={styles.img2}/>
       
       </div>
                     

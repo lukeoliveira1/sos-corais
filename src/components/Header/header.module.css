@@ -32,11 +32,23 @@
   font-size: 1rem;
 }
 
+@media (min-width: 1441px) {
+  .logoSos {
+    width: 10%;
+    height: 10%;
+}
+
+  .menu a {
+    margin-right: 10%;
+    font-size: 1.8rem;
+  }
+}
+
 @media (max-width: 1200px) {
   .logoSos {
       width: 20%;
       height: 10%;
-    }
+  }
 
   .menu a {
     margin-right: 3%;
