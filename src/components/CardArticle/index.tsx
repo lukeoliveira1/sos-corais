@@ -11,6 +11,8 @@ interface CardArticleProps {
 export function CardArticle({ nameArticle, nameStudentOne, nameStudentTwo, nameAdvisorOne, nameAdvisorTwo} : CardArticleProps) {
   return(
     <>
+    <section className={styles.lineCardArticle}></section>
+    
     <div className={styles.divCardArticle}>
 
       <h2>{nameArticle}</h2>
@@ -29,7 +31,6 @@ export function CardArticle({ nameArticle, nameStudentOne, nameStudentTwo, nameA
     
     </div>
 
-    <section className={styles.lineCardArticle}></section>
     </>
   )
 }
