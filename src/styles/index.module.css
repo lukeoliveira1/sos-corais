@@ -88,6 +88,10 @@
   .aside p {
     font-size: 0.8rem;
   }
+
+  .aside a {
+    margin-bottom: 4%;
+  }
   
   .aside img {
     width: 80%;

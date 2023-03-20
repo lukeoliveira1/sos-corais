@@ -79,7 +79,7 @@ export default function ArticlesWithoutLogin() {
           </p>
     
           
-          <Image src={imageArticle} alt="corais e peixes no fundo do mar" height={250} width={350}/>
+          <Image src={imageArticle} alt="corais e peixes no fundo do mar" />
           
         </div>
               

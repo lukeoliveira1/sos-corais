@@ -100,10 +100,6 @@
     margin-left: 0px;
   }
 
-  .sendFile {
-    width: 150px;
-  }
-
   .formButton {
     justify-content: center;
     margin-bottom: 10%;
@@ -112,5 +108,11 @@
   .aside img {
     width: 0%;
     height: 0%;
+  }
+}
+
+@media (max-width: 425px) {
+  .sendFile {
+    width: 150px;
   }
 }
