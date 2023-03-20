@@ -18,3 +18,20 @@
   outline: 0;
   width: 200px;
 }
+
+@media (min-width: 1441px) {
+  .label{
+    font-size: 1.6rem;
+  }
+
+  .input {
+    width: 250px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 425px) {
+  .input {
+    width: 150px;
+  }
+}

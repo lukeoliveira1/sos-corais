@@ -6,3 +6,10 @@
   padding: 5px;
   cursor: pointer;
 }
+
+@media (min-width: 1441px) {
+  .button {
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}

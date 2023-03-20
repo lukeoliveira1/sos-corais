@@ -134,7 +134,7 @@ export default function Registration() {
       
       <div className={styles.aside}>
         
-        <Image src={imageRegistration} alt="corais brancos no fundo do mar" height={350} width={350}/>
+        <Image src={imageRegistration} alt="corais brancos no fundo do mar"/>
         
       </div>
      </Back>
