@@ -6,5 +6,7 @@ export interface RegistrationForm {
   nameAdvisorTwo: string,
   nameSchool: string,
   nameArticle: string,
+  emailHead: string,
+  phoneNumberHead: string,
   article: File | null,
 }

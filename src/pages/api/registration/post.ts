@@ -8,10 +8,12 @@ export const postRegistration = async ({
     nameAdvisorTwo,
     nameSchool,
     nameArticle,
+    emailHead,
+    phoneNumberHead,
     article 
 } : RegistrationForm) => {
     try {
-        return await api.post<RegistrationForm>("Registration/", {nameStudentOne, nameStudentTwo, nameAdvisorOne, nameAdvisorTwo, nameSchool, nameArticle, article}, {
+        return await api.post<RegistrationForm>("Registration/", {nameStudentOne, nameStudentTwo, nameAdvisorOne, nameAdvisorTwo, nameSchool, nameArticle, emailHead, phoneNumberHead, article}, {
             headers: {
                 'Content-Type': 'multipart/form-data'
               }

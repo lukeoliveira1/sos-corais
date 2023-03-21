@@ -23,6 +23,8 @@ export default function Registration() {
   const [nameAdvisorTwo, setNameAdvisorTwo] = useState<string>('');
   const [nameSchool, setNameSchool] = useState<string>('');
   const [nameArticle, setNameArticle] = useState<string>('');
+  const [emailHead, setEmailHead] = useState<string>('');
+  const [phoneNumberHead, setPhoneNumberHead] = useState<string>('');
   const [article, setArticle] = useState<File | null>(null);
   
   function handleFile (event : any) {
@@ -44,10 +46,12 @@ export default function Registration() {
           nameAdvisorTwo,
           nameSchool,
           nameArticle,
+          emailHead,
+          phoneNumberHead,
           article,
         }
   
-        await postRegistration(formData)
+        const pass = await postRegistration(formData)
         
         setNameStudentOne('')
         setNameStudentTwo('')
@@ -55,12 +59,17 @@ export default function Registration() {
         setNameAdvisorTwo('')
         setNameSchool('')
         setNameArticle('')
+        setEmailHead('')
+        setPhoneNumberHead('')
         setArticle(null)
+
+        if(pass) {
+          router.push('./registration')
+        }
       }
     } catch (err) {
       alert(err)
     } finally {
-      router.push('./')
     }
   }
 
@@ -102,6 +111,15 @@ export default function Registration() {
               value={nameArticle}
               onChange={(event) => setNameArticle(event.target.value)} 
               />
+
+            <InputText 
+              type="text"
+              label='Email para contato:'
+              name='emailHead'
+              isRequired={true}
+              value={emailHead}
+              onChange={(event) => setEmailHead(event.target.value)} 
+            />
                       
              <input
                type="file"
@@ -142,6 +160,16 @@ export default function Registration() {
               value={nameAdvisorTwo}
               onChange={(event) => setNameAdvisorTwo(event.target.value)} 
               />
+
+            <InputText 
+              type="tel"
+              label='Telefone para contato:'
+              name='phoneNumberHead'
+              isRequired={true}
+              placeholder='(XX) XXXXX-XXXX'
+              value={phoneNumberHead}
+              onChange={(event) => setPhoneNumberHead(event.target.value)} 
+            />
 
             <div className={styles.formButton}>
               <Button />
