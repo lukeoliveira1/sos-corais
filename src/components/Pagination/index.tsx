@@ -1,11 +1,14 @@
 import styles from './pagination.module.css'
 
-export function Pagination() {
+interface PaginationOptions {
+  onClick: () => void;
+}
+
+export function Pagination({ onClick } : PaginationOptions) {
   return(
-    <ul className={styles.pagination}>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-    </ul>
+    <button 
+      onClick={onClick}>
+        Ver mais
+    </button>
   )
 }

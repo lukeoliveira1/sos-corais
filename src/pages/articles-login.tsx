@@ -1,14 +1,44 @@
-import Image from 'next/image'
-
 import styles from '../styles/articles-login.module.css'
-
-import imageArticle from 'public/img/image-articles.jpg'
 
 import { Back } from '@/components/Back'
 import { CardArticle } from '@/components/CardArticle'
 import { Pagination } from '@/components/Pagination'
+import { useEffect, useState } from 'react'
+import { getRegistration } from './api/registration/get'
+import { RegistrationForm } from '@/types/Registration'
+import axios from 'axios'
+import { IPagination } from '@/types/Pagination'
 
 export default function ArticlesWithLogin() {
+  const [objectCards, setObjectCards] = useState<RegistrationForm[]>([]);
+  const [nextPage, setNextPage] = useState('')
+  
+  function seeMore () {
+    axios.get<IPagination<RegistrationForm>>(`${nextPage}`)
+      .then((res) => {
+        if (res && res.data && res.data.results) {
+          setObjectCards([...objectCards, ...res.data.results])
+          setNextPage(res.data.next)
+        }
+        })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
+  useEffect(() => {
+    getRegistration()
+    .then((res) => {
+      if (res && res.data && res.data.results) {
+        setObjectCards(res.data.results)
+        setNextPage(res.data.next)
+      }
+      })
+    .catch((err) => {
+      console.log(err)
+    })
+  }, []);
+
   return(
     <>
        <Back>        
@@ -17,13 +47,21 @@ export default function ArticlesWithLogin() {
                     
           <h1 className={styles.title}>Artigos</h1>
           
-          <section className={styles.lineArticleH1}></section>
-
-          <CardArticle
-            nameArticle='Ecologia de corais: a relação entre a diversidade e a resiliência de recifes de coral' 
-            nameStudentOne='John Park' 
-            nameAdvisorOne='Chris Broksle' 
-          />
+          {objectCards.length != 0 ? objectCards.map((card, index) => {
+            return (
+              <CardArticle 
+                key={index} 
+                nameArticle={card.nameArticle}
+                nameStudentOne={card.nameStudentOne}
+                nameAdvisorOne={card.nameAdvisorOne}
+                nameStudentTwo={card.nameStudentTwo}
+                nameAdvisorTwo={card.nameAdvisorTwo}
+              />
+            )
+          })
+        
+          : 
+          <>
           <CardArticle
             nameArticle='Fenótipo de coral: investigando as adaptações moleculares a mudanças ambientais' 
             nameStudentOne='John Park' 
@@ -36,19 +74,15 @@ export default function ArticlesWithLogin() {
             nameStudentOne='John Park' 
             nameAdvisorOne='Chris Broksle' 
           />
-          
-          <Pagination />
-        </div>
-        
-        <div className={styles.aside}>
-        
-          <p>
-          O branqueamento dos corais é causado por uma série de fatores, como a elevação da temperatura da água do mar, a poluição, a acidificação dos oceanos e eventos climáticos extremos. Esses fatores podem afetar a relação simbiótica entre os corais e as algas, levando à expulsão das algas pelos corais. O branqueamento pode levar à morte dos corais, o que pode ter consequências devastadoras para os ecossistemas marinhos e para as comunidades que dependem dos recursos marinhos para sua subsistência. Por isso, é importante promover ações de conservação dos recifes de coral e reduzir as emissões de gases de efeito estufa que contribuem para o aquecimento global e a acidificação dos oceanos.
-          </p>
-    
-          
-          <Image src={imageArticle} alt="corais e peixes no fundo do mar" height={300} width={350}/>
-          
+          </>
+          }
+          {nextPage && 
+            <>  
+              <div className={styles.buttonPagination}>
+                <Pagination onClick={seeMore} />
+              </div>
+            </>
+          }
         </div>
               
       </Back>
