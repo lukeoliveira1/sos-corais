@@ -9,6 +9,7 @@ import { InputText } from '@/components/InputText'
 import { Button } from '@/components/Button'
 import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/router'
+import { loginAdministrator } from './api/administrator/login'
 
 export default function ArticlesWithoutLogin() {
 
@@ -17,16 +18,23 @@ export default function ArticlesWithoutLogin() {
   const [user, setUser] = useState<string>('')
   const [password, setPassword] = useState<string>('')
 
-  function handleLogin(event : FormEvent) {
+  async function handleLogin(event : FormEvent) {
     event.preventDefault()
 
-    console.log(user, password)
-    
-    if(user === 'admin' && password === '1234') {
-      router.push('./articles-login')
-    } else {
-      alert('You are not administrator!')
+    const formData = {
+      username: user,
+      password: password
     }
+
+    try {
+      await loginAdministrator(formData) 
+      ?
+      router.push('./articles-login')
+      :
+      alert('You are not administrator!')
+    } catch (err) {
+      alert(err)
+    } 
 
     setUser('')
     setPassword('')

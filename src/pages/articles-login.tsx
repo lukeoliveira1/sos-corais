@@ -1,8 +1,4 @@
-import Image from 'next/image'
-
 import styles from '../styles/articles-login.module.css'
-
-import imageArticle from 'public/img/image-articles.jpg'
 
 import { Back } from '@/components/Back'
 import { CardArticle } from '@/components/CardArticle'
@@ -34,7 +30,6 @@ export default function ArticlesWithLogin() {
     getRegistration()
     .then((res) => {
       if (res && res.data && res.data.results) {
-        console.log(res.data.results)
         setObjectCards(res.data.results)
         setNextPage(res.data.next)
       }

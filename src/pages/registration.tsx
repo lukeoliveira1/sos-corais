@@ -8,9 +8,14 @@ import { Back } from '@/components/Back';
 import { InputText } from '@/components/InputText';
 import { Button } from '@/components/Button';
 import { FormEvent, useState } from 'react';
-
+import { postRegistration } from './api/registration/post';
+import { RegistrationForm } from '@/types/Registration';
+import api from '@/services/api';
+import { useRouter } from 'next/router';
 
 export default function Registration() {
+
+  const router = useRouter()
 
   const [nameStudentOne, setNameStudentOne] = useState<string>('');
   const [nameStudentTwo, setNameStudentTwo] = useState<string>('');
@@ -20,28 +25,43 @@ export default function Registration() {
   const [nameArticle, setNameArticle] = useState<string>('');
   const [article, setArticle] = useState<File | null>(null);
   
-  function handleSubmitForm(event : FormEvent) {
+  function handleFile (event : any) {
+    if (event.target.files && event.target.files[0]) {
+      setArticle(event.target.files[0])
+    } 
+  }
+  
+  async function handleSubmitForm(event : FormEvent) {
     event.preventDefault()
 
-    const formData = {
-      nameStudentOne,
-      nameStudentTwo,
-      nameAdvisorOne,
-      nameAdvisorTwo,
-      nameSchool,
-      nameArticle,
-      article
-    }
-   
-    console.log(formData)
+    try {
+      if(article) {
 
-    setNameStudentOne('')
-    setNameStudentTwo('')
-    setNameAdvisorOne('')
-    setNameAdvisorTwo('')
-    setNameSchool('')
-    setNameArticle('')
-    setArticle(null)
+        const formData : RegistrationForm = {
+          nameStudentOne,
+          nameStudentTwo,
+          nameAdvisorOne,
+          nameAdvisorTwo,
+          nameSchool,
+          nameArticle,
+          article,
+        }
+  
+        await postRegistration(formData)
+        
+        setNameStudentOne('')
+        setNameStudentTwo('')
+        setNameAdvisorOne('')
+        setNameAdvisorTwo('')
+        setNameSchool('')
+        setNameArticle('')
+        setArticle(null)
+      }
+    } catch (err) {
+      alert(err)
+    } finally {
+      router.push('./')
+    }
   }
 
   return(
@@ -52,14 +72,14 @@ export default function Registration() {
         
         <h1>Inscrição</h1>
         
-        <form onSubmit={handleSubmitForm} className={styles.form}>
+        <form onSubmit={handleSubmitForm} action={`${api}media/media/articles/`} method="post" encType="multipart/form-data" className={styles.form}>
 
           <div className={styles.formLeft}>
 
             <InputText 
               type="text"
               label='Nome Estudante 1:'
-              name='nameStudentFirst'
+              name='nameStudentOne'
               isRequired={true}
               value={nameStudentOne}
               onChange={(event) => setNameStudentOne(event.target.value)} 
@@ -68,7 +88,7 @@ export default function Registration() {
             <InputText 
               type="text"
               label='Nome Estudante 2:'
-              name='nameStudentSeconde'
+              name='nameStudentTwo'
               isRequired={false}
               value={nameStudentTwo}
               onChange={(event) => setNameStudentTwo(event.target.value)} 
@@ -77,7 +97,7 @@ export default function Registration() {
             <InputText 
               type="text"
               label='Nome do artigo:'
-              name='articleName'
+              name='nameArticle'
               isRequired={true}
               value={nameArticle}
               onChange={(event) => setNameArticle(event.target.value)} 
@@ -87,7 +107,8 @@ export default function Registration() {
                type="file"
                name="article"
                id="article"
-               onChange={(event)=> setArticle(event.target.files && event.target.files[0])}
+               accept=".pdf"
+               onChange={handleFile}
                className={styles.sendFile}
              />
             

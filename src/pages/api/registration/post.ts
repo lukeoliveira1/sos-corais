@@ -11,7 +11,11 @@ export const postRegistration = async ({
     article 
 } : RegistrationForm) => {
     try {
-        return await api.post<RegistrationForm>("registration/", {nameStudentOne, nameStudentTwo, nameAdvisorOne, nameAdvisorTwo, nameSchool, nameArticle, article});
+        return await api.post<RegistrationForm>("Registration/", {nameStudentOne, nameStudentTwo, nameAdvisorOne, nameAdvisorTwo, nameSchool, nameArticle, article}, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+        });
     } catch (error) {
         console.log(error) 
     }
