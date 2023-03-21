@@ -6,7 +6,7 @@ import styles from '../styles/index.module.css'
 
 import imageMain from 'public/img/image-main-1.jpg'
 
-import imageAside from 'public/img/image-main-2.png'
+import imageAside from 'public/img/image-main-2.jpg'
 
 import { Back } from '@/components/Back'
 
